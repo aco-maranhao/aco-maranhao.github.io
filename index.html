@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Aço Maranhão" />
-    <meta property="og:description" content="Cotação On-line" />
-    <meta property="og:url" content="http://acomaranhao.grupodimensao.com//" />
+    <meta property="og:description" content="Para nossos clientes, uma facilidade a mais. O Cotação On-line busca disponibilizar um canal para o cliente entrar " />
+    <meta property="og:url" content="https://aco-maranhao.github.io" />
     <meta property="og:site_name" content="Aço Maranhão" />
     <meta property="og:image"
-        content="url(http://acomaranhao.grupodimensao.com/media/sites/7/2020/03/bannerdimensao-acomaranhao.jpg)" />
+        content="http://acomaranhao.grupodimensao.com/media/sites/7/2020/03/bannerdimensao-acomaranhao.jpg" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="333" />
     <meta property="og:locale" content="pt_BR" />
@@ -1066,15 +1066,35 @@ color: red;
         font-size: 14px;
         padding: 10px 10px;
         background: transparent;
-        float: right;
-        margin-top: -35px;
+        margin-top: 20px;
         color: #4CAF50;
         border: 1px solid #4CAF50;
     }
-
     #s2id_produto {
-        width: 84%;
+            width: 71% !important;
+        }
+
+        #produtoqtd {
+                float: right;
+    width: 25%;
+    margin-top: -33px;
+    height: 33px;
+    border-width: 0 0 3px 0 !important;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    padding-left: 7px;
+        }
+
+    #produtoqtd::placeholder {
+        font-size: 13px;
+        font-family: "Poppins", sans-serif;
     }
+
+    .label.label-qtd {
+        float: right;
+        width: 27%;
+    }
+
 
     @media (max-width: 550px) {
         .section__content img {
@@ -1105,6 +1125,21 @@ color: red;
             width: 100%;
             margin-top: 20px;
         }
+        #produtoqtd {
+            float: none;
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 10px;
+            margin-top: 30px;
+        }
+        .label.label-qtd {
+            float: left;
+            position: absolute;
+            margin-top: 64px;
+            left: 32px;
+            padding: 11px 0 0 7px;
+        }
+
     }
     </style>
 
@@ -1129,7 +1164,9 @@ color: red;
                     <div class="row-wrapper" data-key="a">
                         <div class="ele adults" data-key="a">
                             <label for="title" data-key="a">Produto <span class='txt-danger' data-key="a">*</span></label>
-                            <input name="title" class='form-control' id="produto" class='select2' data-key="a" />
+                            <label for="title" class='label label-qtd' data-key="a">Qtq/pc <span class="txt-danger" data-key="a">*</span></label>
+                            <input name="produto" class='form-control' id="produto" class='select2' data-key="a" />
+                            <input name="produtoqtd" class="form-control" placeholder="Ex: 100,34kilos / 100pc" id="produtoqtd" data-key="a" tabindex="-1" title="">
                             <input value="Adicionar" id="adicionar" data-key="a" type="button">
                         </div>
                     </div>
@@ -6676,7 +6713,7 @@ color: red;
     </script>
 
     <script>
-        !function(e){e(".quick-reservation").hide(1e3);function t(){e(".quick-reservation").fadeIn(1400);e(".bigstep").hide()}function o(){e(".bigstep").fadeIn(1400);e(".quick-reservation").hide(1e3)}document.querySelector(".close-icon").addEventListener("click",o);document.querySelector(".section__button").addEventListener("click",t)}(jQuery,window);var e,l,q,r,s,t,u,testValoresCotacao=(e=jQuery,{valid:function(){var e=""==document.querySelector("#nome").value,t=""==document.querySelector("#phone").value;this.firstValid();if(e||t){swal({icon:"error",title:"Nome e Telefone precisam ser preenchidos obrigatóriamente"});return!1}return!0},firstValid:function(){var t=!0;e('[name="produtosqtd[]"]').each(function(){-1<e(this).val().search(/[0-9]+/)||(t=!1)});if(t)return!0;swal({icon:"error",title:"O campo QTD/PC precisa ser preenchido corretamente. Ex: 100pc ou 100kilos"});return!1}}),campoProduto=(l=jQuery,{template:function(e){setTimeout(function(){l(".quick-reservation .section__button").off().on("click",function(e){e.preventDefault();e.target.parentElement.remove()})},"1000");return"<div class='row-wrapper'><div class='ele first-name custom ele-md'><label class='dpj'>Item <span class='txt-danger'>*</span></label><input  class='form-control' type='text' name='produtos[]' value='"+e+"' placeholder='Descricao produto'></div><div class='ele email-address custom ele-md ele-qt'><label class='dpj'>Qtd/PC<span class='txt-danger'>*</span> </label><input class='form-control' type='text' name='produtosqtd[]' value='' placeholder='ex: 10 kilos / 20 pecas'></div><button type='button' class='section__button'>Excluir</button></div></div><div>"}}),xhr=(window,q=new Headers,r=new URLSearchParams,t=s=0,u={method:"GET"},{setHeader:function(e){for(var t in e){q.append(t,e[t]);s++}return xhr},urlParams:function(e){for(var o in e){r.append(o,e[o]);t++}return xhr},send:function(e,o){0<s&&(u.headers=q);0<t&&(u.body=r);o&&(u.method=o);t=0;return fetch(e,u).then(function(e){return e.text()})}});!function(i){i.document.onload=function(){document.querySelectorAll("[data-key]").forEach(function(e,t){e.dataset.key=1==Math.random().toFixed()?Math.random().toString("31").substr(2,4).toUpperCase():Math.random().toString("31").substr(2,4)})};i.document.querySelector("body").addEventListener("onRecapth",function(e){return xhr.urlParams({token:"xoxp-35834828099-326062413654-632731147127-a389606e1e3aa17a92445e8818e0d4a5",key:"create",data:e.detail}).send("https://script.google.com/macros/s/AKfycby_S20aBQu0C-MCUpekATLKIYPE17UVdhEdNJ3z2JoBa7jRYZQ/exec","POST").then(function(e){"true"==e.substring(42,59).split(":")[1].trim()&&document.querySelector("#enviar").removeAttribute("disabled");testValoresCotacao.valid()})});i.document.querySelector("body").addEventListener("offRecapth",function(){document.querySelector("#enviar").setAttribute("disabled","disabled")});try{$("#produto").select2({data:produtoss,placeholder:"Digite o nome do produto",query:function(t){var e;0;e=[];t.term&&""!==t.term?e=_.filter(this.data,function(e){return 0<=e.text.toUpperCase().indexOf(t.term.toUpperCase())}):""===t.term&&(e=this.data);t.callback({results:e.slice(20*(t.page-1),20*t.page),more:e.length>=20*t.page})}})}catch(e){swal({icon:"error",title:"Um erro foi disparado, entre em contato por email para informar o problema: suporte@grupodimensao.com.br"})}$("#adicionar").click(function(e){e.preventDefault();if(!$("#produto").val()||null==$("#produto").val()||null==$("#produto").val())return!1;$(".row-wrapper:nth-child(1)").after(campoProduto.template($("#produto").val()+" - "+$(".select2-chosen").text()))});$("#enviar").on("click",function(e){e.preventDefault();if(!testValoresCotacao.valid())return!1;var t=$("#nome").val(),o=$("#email").val(),r=$("#obs").val(),a=$("#phone").val(),n="";$('[name="produtos[]"]').each(function(e){n+=$(this).val()+" => "+$('[name="produtosqtd[]"]').get(e).value+";"});swal({icon:"info",title:"Aguarde, estamos processando sua requisição",timer:"1000"});xhr.urlParams({token:"xoxp-35834828099-326062413654-632731147127-a389606e1e3aa17a92445e8818e0d4a5",key:"send",nome:t,email:o,obs:r,telefone:a,produto:JSON.stringify(n)}).send("https://script.google.com/macros/s/AKfycby_S20aBQu0C-MCUpekATLKIYPE17UVdhEdNJ3z2JoBa7jRYZQ/exec","POST").then(function(e){var t=e.substring(38,51).split(":");i.console.log(e,t,t[1].trim(),"fio");if("true"!=t[1].trim()){swal({icon:"error",title:"Opss! Aconteceu algo com sua solicitação, por favor tente novamente mais tarde",timer:"5000"});return!1}swal({icon:"success",title:"Sua solicitação foi enviada. Aguarde, um de nossos atendentes irá retornar o contato assim que possível!",timer:"5000"});setTimeout(function(){location.reload()},"5000")})});$("#continuar").on("click",function(e){e.preventDefault();if(!testValoresCotacao.firstValid())return!1;e.target.value="Continuar"==e.target.value?"Voltar":"Continuar";$(".row-wrapper:not(.row-user)").toggle();$("#adicionar").toggle();$(".row-wrapper.row-user").toggle();$("#enviar").toggle();$(".g-recaptcha").toggle()})}(window);window.onCap=function(e){document.querySelector("body").dispatchEvent(new CustomEvent("onRecapth",{detail:e}))};window.offCap=function(e){document.querySelector("body").dispatchEvent(new CustomEvent("offRecapth",{detail:e}))};
+        !function(e){e(".quick-reservation").hide(1e3);function t(){e(".quick-reservation").fadeIn(1400);e(".bigstep").hide()}function o(){e(".bigstep").fadeIn(1400);e(".quick-reservation").hide(1e3)}document.querySelector(".close-icon").addEventListener("click",o);document.querySelector(".section__button").addEventListener("click",t)}(jQuery,window);var e,l,r,s,t,u,v,testValoresCotacao=(e=jQuery,{valid:function(){var e=""==document.querySelector("#nome").value,t=""==document.querySelector("#phone").value;this.firstValid();if(e||t){swal({icon:"error",title:"Nome e Telefone precisam ser preenchidos obrigatóriamente"});return!1}return!0},firstValid:function(){var t=!0;e('[name="produtosqtd[]"]').each(function(){-1<e(this).val().search(/[0-9]+/)||(t=!1)});if(t)return!0;swal({icon:"error",title:"O campo QTD/PC precisa ser preenchido corretamente. Ex: 100pc ou 100kilos"});return!1}}),campoProduto=(l=jQuery,{template:function(e,t){setTimeout(function(){l(".quick-reservation .section__button").off().on("click",function(e){e.preventDefault();e.target.parentElement.remove()})},"1000");return"<div class='row-wrapper'><div class='ele first-name custom ele-md'><label class='dpj'>Item <span class='txt-danger'>*</span></label><input  class='form-control' type='text' name='produtos[]' value='"+e+"' placeholder='Descricao produto'></div><div class='ele email-address custom ele-md ele-qt'><label class='dpj'>Qtd/PC<span class='txt-danger'>*</span> </label><input class='form-control' type='text' name='produtosqtd[]' value='"+t+"' placeholder='ex: 10 kilos / 20 pecas'></div><button type='button' class='section__button'>Excluir</button></div></div><div>"}}),xhr=(window,r=new Headers,s=new URLSearchParams,u=t=0,v={method:"GET"},{setHeader:function(e){for(var o in e){r.append(o,e[o]);t++}return xhr},urlParams:function(e){for(var t in e){s.append(t,e[t]);u++}return xhr},send:function(e,o){0<t&&(v.headers=r);0<u&&(v.body=s);o&&(v.method=o);u=0;return fetch(e,v).then(function(e){return e.text()})}});!function(i){i.document.onload=function(){document.querySelectorAll("[data-key]").forEach(function(e,t){e.dataset.key=1==Math.random().toFixed()?Math.random().toString("31").substr(2,4).toUpperCase():Math.random().toString("31").substr(2,4)})};i.document.querySelector("body").addEventListener("onRecapth",function(e){return xhr.urlParams({token:"xoxp-35834828099-326062413654-632731147127-a389606e1e3aa17a92445e8818e0d4a5",key:"create",data:e.detail}).send("https://script.google.com/macros/s/AKfycby_S20aBQu0C-MCUpekATLKIYPE17UVdhEdNJ3z2JoBa7jRYZQ/exec","POST").then(function(e){"true"==e.substring(42,59).split(":")[1].trim()&&document.querySelector("#enviar").removeAttribute("disabled");testValoresCotacao.valid()})});i.document.querySelector("body").addEventListener("offRecapth",function(){document.querySelector("#enviar").setAttribute("disabled","disabled")});try{$("#produto").select2({data:produtoss,placeholder:"Digite o nome do produto",query:function(t){var e;0;e=[];t.term&&""!==t.term?e=_.filter(this.data,function(e){return 0<=e.text.toUpperCase().indexOf(t.term.toUpperCase())}):""===t.term&&(e=this.data);t.callback({results:e.slice(20*(t.page-1),20*t.page),more:e.length>=20*t.page})}})}catch(e){swal({icon:"error",title:"Um erro foi disparado, entre em contato por email para informar o problema: suporte@grupodimensao.com.br"})}$("#produto").change(function(e){$("#produtoqtd").focus()});$("#adicionar").click(function(e){e.preventDefault();if(!$("#produto").val()||null==$("#produto").val()||null==$("#produto").val())return!1;$(".row-wrapper:nth-child(1)").after(campoProduto.template($("#produto").val()+" - "+$(".select2-chosen").text(),$("#produtoqtd").val()))});$("#enviar").on("click",function(e){e.preventDefault();if(!testValoresCotacao.valid())return!1;var t=$("#nome").val(),o=$("#email").val(),r=$("#obs").val(),a=$("#phone").val(),n="";$('[name="produtos[]"]').each(function(e){n+=$(this).val()+" => "+$('[name="produtosqtd[]"]').get(e).value+";"});swal({icon:"info",title:"Aguarde, estamos processando sua requisição",timer:"1000"});xhr.urlParams({token:"xoxp-35834828099-326062413654-632731147127-a389606e1e3aa17a92445e8818e0d4a5",key:"send",nome:t,email:o,obs:r,telefone:a,produto:JSON.stringify(n)}).send("https://script.google.com/macros/s/AKfycby_S20aBQu0C-MCUpekATLKIYPE17UVdhEdNJ3z2JoBa7jRYZQ/exec","POST").then(function(e){var t=e.substring(38,51).split(":");i.console.log(e,t,t[1].trim(),"fio");if("true"!=t[1].trim()){swal({icon:"error",title:"Opss! Aconteceu algo com sua solicitação, por favor tente novamente mais tarde",timer:"5000"});return!1}swal({icon:"success",title:"Sua solicitação foi enviada. Aguarde, um de nossos atendentes irá retornar o contato assim que possível!",timer:"5000"});setTimeout(function(){location.reload()},"5000")})});$("#continuar").on("click",function(e){e.preventDefault();if(!testValoresCotacao.firstValid())return!1;e.target.value="Continuar"==e.target.value?"Voltar":"Continuar";$(".row-wrapper:not(.row-user)").toggle();$("#adicionar").toggle();$(".row-wrapper.row-user").toggle();$("#enviar").toggle();$(".g-recaptcha").toggle()})}(window);window.onCap=function(e){document.querySelector("body").dispatchEvent(new CustomEvent("onRecapth",{detail:e}))};window.offCap=function(e){document.querySelector("body").dispatchEvent(new CustomEvent("offRecapth",{detail:e}))};
     </script>
 </body>
 
